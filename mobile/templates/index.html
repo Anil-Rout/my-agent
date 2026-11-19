@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My AI Agent</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #1a1a2e; color: #fff; font-family: Arial; height: 100vh; display: flex; flex-direction: column; }
+        #header { background: #16213e; padding: 15px; text-align: center; font-size: 18px; font-weight: bold; }
+        #chat-box { flex: 1; overflow-y: auto; padding: 15px; display: flex; flex-direction: column; gap: 10px; }
+        .msg { max-width: 80%; padding: 10px 14px; border-radius: 18px; line-height: 1.4; font-size: 14px; }
+        .user { background: #0f3460; align-self: flex-end; }
+        .agent { background: #533483; align-self: flex-start; }
+        #input-area { background: #16213e; padding: 10px; display: flex; gap: 10px; }
+        #input { flex: 1; background: #0f3460; border: none; border-radius: 25px; padding: 12px 18px; color: #fff; font-size: 14px; outline: none; }
+        #send-btn { background: #533483; border: none; border-radius: 50%; width: 45px; height: 45px; color: #fff; font-size: 18px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div id="header">🤖 My AI Agent</div>
+    <div id="chat-box">
+        <div class="msg agent">Hello! I am your personal AI assistant. How can I help you?</div>
+    </div>
+    <div id="input-area">
+        <input id="input" type="text" placeholder="Type a message..." />
+        <button id="send-btn" onclick="sendMessage()">➤</button>
+    </div>
+    <script>
+        const chatBox = document.getElementById('chat-box');
+        const input = document.getElementById('input');
+
+        input.addEventListener('keypress', e => { if (e.key === 'Enter') sendMessage(); });
+
+        function addMessage(text, type) {
+            const div = document.createElement('div');
+            div.className = `msg ${type}`;
+            div.textContent = text;
+            chatBox.appendChild(div);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        async function sendMessage() {
+            const text = input.value.trim();
+            if (!text) return;
+            input.value = '';
+            addMessage(text, 'user');
+            addMessage('Thinking...', 'agent');
+
+            try {
+                const res = await fetch('/send', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: text })
+                });
+                const data = await res.json();
+                chatBox.lastChild.textContent = data.response;
+            } catch (e) {
+                chatBox.lastChild.textContent = 'Error connecting to agent.';
+            }
+        }
+    </script>
+</body>
+</html>

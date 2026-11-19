@@ -1,0 +1,97 @@
+{
+  "lessons": [
+    {
+      "id": "e5e2daa3",
+      "type": "teaching",
+      "lesson": "User preference: i prefer reequired answer always",
+      "trigger": "remember I prefer short answers always",
+      "context": "",
+      "weight": 5,
+      "times_reinforced": 3,
+      "created_at": "2026-08-02T10:33:47.940638",
+      "last_reinforced": "2026-08-09T10:13:16.527433"
+    },
+    {
+      "id": "dac23f61",
+      "type": "teaching",
+      "lesson": "Use Visual Studio (VS) for coding.",
+      "trigger": "Use Visual Studio (VS) for coding.",
+      "context": "",
+      "weight": 3,
+      "times_reinforced": 1,
+      "created_at": "2026-08-02T10:35:01.055380",
+      "last_reinforced": "2026-08-02T10:35:01.055380"
+    },
+    {
+      "id": "a5af7f46",
+      "type": "teaching",
+      "lesson": "User preference: remember i use vs for coading",
+      "trigger": "remember I use VS Code for coding",
+      "context": "",
+      "weight": 4,
+      "times_reinforced": 2,
+      "created_at": "2026-08-02T10:35:20.962005",
+      "last_reinforced": "2026-08-02T10:48:01.055974"
+    },
+    {
+      "id": "40ee5cf6",
+      "type": "teaching",
+      "lesson": "Use VS Code as the preferred code editor for all coding tasks.",
+      "trigger": "Use VS Code as the preferred code editor for all coding tasks.",
+      "context": "",
+      "weight": 3,
+      "times_reinforced": 1,
+      "created_at": "2026-08-02T10:47:41.885150",
+      "last_reinforced": "2026-08-02T10:47:41.885150"
+    },
+    {
+      "id": "98af407c",
+      "type": "teaching",
+      "lesson": "User prefers brief responses and uses VS Code for coding",
+      "trigger": "User prefers brief responses and uses VS Code for coding",
+      "context": "",
+      "weight": 3,
+      "times_reinforced": 1,
+      "created_at": "2026-08-02T10:48:37.886767",
+      "last_reinforced": "2026-08-02T10:48:37.886767"
+    },
+    {
+      "id": "b25e81ca",
+      "type": "correction",
+      "lesson": "Correction needed: When user says something like 'No write it in notepad', previous response was wrong. Adjust approach.",
+      "trigger": "No write it in notepad",
+      "context": "I understood. What else can I do for you?",
+      "weight": 2,
+      "times_reinforced": 1,
+      "created_at": "2026-08-08T22:39:15.436762",
+      "last_reinforced": "2026-08-08T22:39:15.436762"
+    },
+    {
+      "id": "42b5af1f",
+      "type": "teaching",
+      "lesson": "User's name is Anil.",
+      "trigger": "User's name is Anil.",
+      "context": "",
+      "weight": 3,
+      "times_reinforced": 1,
+      "created_at": "2026-08-09T10:12:55.888992",
+      "last_reinforced": "2026-08-09T10:12:55.888992"
+    }
+  ],
+  "user_profile": {
+    "name": "Anil",
+    "known_facts": [],
+    "preferences": {
+      "tools": [
+        "Vs",
+        "Vs Code"
+      ]
+    }
+  },
+  "stats": {
+    "total_interactions": 113,
+    "corrections_made": 1,
+    "lessons_learned": 7
+  },
+  "agent_name": "ARIA"
+}
